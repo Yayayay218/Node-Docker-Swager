@@ -1,0 +1,15 @@
+files:
+  post:
+    tags:
+      - files
+    description: Upload image
+    consumes:
+      - multipart/form-data
+    parameters:
+      - in: formData
+        name: file
+        type: file
+        description: The file to upload.
+    responses:
+      200:
+        description:  OK

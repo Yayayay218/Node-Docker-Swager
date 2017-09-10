@@ -1,0 +1,14 @@
+FROM node:6.11.0
+
+RUN useradd --user-group --create-home --shell /bin/false app
+RUN npm install -g nodemon
+ENV HOME=/home/app
+
+COPY package.json $HOME/quiz-backend/
+RUN chown -R app:app $HOME/*
+
+USER app
+WORKDIR $HOME/quiz-backend
+RUN npm install
+
+CMD ["nodemon", "-e", "yaml,js"]

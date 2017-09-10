@@ -1,0 +1,4 @@
+Quiz:
+  $ref: ./Quiz.yaml#/Quiz
+Question:
+  $ref: ./Question.yaml#/Question

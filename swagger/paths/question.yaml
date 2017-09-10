@@ -1,0 +1,78 @@
+questions:
+  post:
+    tags:
+      - questions
+    description:  Create a question
+    produces:
+      - application/json
+    parameters:
+      - name: data
+        description:  question Object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#definitions/Question'
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Question'
+
+  get:
+    tags:
+      - questions
+    description:  Get question
+    parameters:
+      - name: id
+        in: query
+        description:  question ID
+        type: string
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Question'
+questionById:
+  put:
+    tags:
+      - questions
+    description:  Edit question
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description:  question ID
+        required: true
+        in: path
+        type: string
+      - name: data
+        description:  question Object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Question'
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Question'
+  delete:
+    tags:
+      - questions
+    description:  Delete question
+    parameters:
+      - name: id
+        description:  question ID
+        required: true
+        in: path
+        type: string
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Question'
+
+
+

@@ -1,0 +1,38 @@
+version: '2'
+
+volumes:
+  mongo_data: {}
+
+services:
+  node:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./compose/node/Dockerfile
+    # command: bash
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: "mongodb://mongo:27017/quiz"
+    volumes:
+      - /home/app/quiz-backend/uploads
+      - /root/opt/quiz-frontend:/home/app/quiz-backend/quiz-frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    # tty: true
+  mongo:
+    restart: always
+    image: mongo:3
+    command: mongod --smallfiles
+    volumes:
+      - mongo_data:/data/db
+  nginx:
+    restart: always
+    build: ./compose/nginx
+    volumes_from:
+      - node
+    depends_on:
+      - node
+    ports:
+      - "80:80"

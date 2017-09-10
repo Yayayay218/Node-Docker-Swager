@@ -1,0 +1,41 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "NODE_ENV=develop webpack --display-error-details -w"
+  },
+  "dependencies": {
+    "admin-on-rest": "^1.1.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "cors": "^2.8.4",
+    "debug": "~0.7.4",
+    "ejs": "^2.5.6",
+    "express": "~4.0.0",
+    "express-paginate": "^0.2.2",
+    "jade": "~1.3.0",
+    "js-yaml": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.8.2.tgz",
+    "json-refs": "https://registry.npmjs.org/json-refs/-/json-refs-2.1.6.tgz",
+    "mongoose": "^4.10.6",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-sequence": "^3.2.0",
+    "morgan": "~1.0.0",
+    "multer": "^1.3.0",
+    "prerender-node": "^2.7.2",
+    "randomstring": "^1.1.5",
+    "static-favicon": "~1.0.0",
+    "swagger-ui-express": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^1.13.3"
+  }
+}

@@ -1,0 +1,19 @@
+Question:
+  type: object
+  required:
+    - title
+    - type
+    - answers
+    - result
+    - quiz
+  properties:
+    title:
+      type: string
+    type:
+      type: number
+    answers:
+      type: string
+    result:
+      type: number
+    quiz:
+      type: string

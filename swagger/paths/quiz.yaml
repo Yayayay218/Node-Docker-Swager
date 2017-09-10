@@ -1,0 +1,78 @@
+quizzes:
+  post:
+    tags:
+      - quizzes
+    description:  Create a quiz
+    produces:
+      - application/json
+    parameters:
+      - name: data
+        description:  Quiz Object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#definitions/Quiz'
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Quiz'
+
+  get:
+    tags:
+      - quizzes
+    description:  Get Quiz
+    parameters:
+      - name: id
+        in: query
+        description:  Quiz ID
+        type: string
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Quiz'
+quizById:
+  put:
+    tags:
+      - quizzes
+    description:  Edit Quiz
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description:  Quiz ID
+        required: true
+        in: path
+        type: string
+      - name: data
+        description:  Quiz Object
+        type: object
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Quiz'
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Quiz'
+  delete:
+    tags:
+      - quizzes
+    description:  Delete Quiz
+    parameters:
+      - name: id
+        description:  Quiz ID
+        required: true
+        in: path
+        type: string
+    responses:
+      200:
+        description:  OK
+        schema:
+          $ref: '#/definitions/Quiz'
+
+
+

@@ -1,0 +1,10 @@
+/quizzes:
+  $ref: quiz.yaml#/quizzes
+/quizzes/{id}:
+  $ref: quiz.yaml#/quizById
+/questions:
+  $ref: question.yaml#/questions
+/questions/{id}:
+  $ref: question.yaml#/questionById
+/files:
+  $ref: file.yaml#/files
